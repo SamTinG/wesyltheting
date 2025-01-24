@@ -16,7 +16,7 @@ function Audio({muted}) {
   return (
     <div>
       <audio ref={audioRef} autoPlay loop muted={muted}>
-        <source src="/public/intro.mp3" type="audio/mp3" />
+        <source src={`${process.env.PUBLIC_URL}/intro.mp3`} type="audio/mp3" />
       </audio>
     </div>
   );
