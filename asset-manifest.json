@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wedding.github.io/static/css/main.e6c13ad2.css",
-    "main.js": "/wedding.github.io/static/js/main.06139fee.js",
+    "main.js": "/wedding.github.io/static/js/main.c4f34b37.js",
     "index.html": "/wedding.github.io/index.html",
     "main.e6c13ad2.css.map": "/wedding.github.io/static/css/main.e6c13ad2.css.map",
-    "main.06139fee.js.map": "/wedding.github.io/static/js/main.06139fee.js.map"
+    "main.c4f34b37.js.map": "/wedding.github.io/static/js/main.c4f34b37.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.06139fee.js"
+    "static/js/main.c4f34b37.js"
   ]
 }
