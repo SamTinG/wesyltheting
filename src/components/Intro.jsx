@@ -9,7 +9,7 @@ const Intro = ({ onFinish }) => {
   return (
     <div style={{ height: '100vh', backgroundColor: 'black' }}>
       <video autoPlay muted style={{ width: 'auto', height: '100%', objectFit: 'cover' }}>
-        <source src={`${process.env.PUBLIC_URL}/intro.mp4`} type="video/mp4" />
+        <source src={"https://pub-25a5a273b5674737acbe05ca2463d8b3.r2.dev/intro.mp4"} type="video/mp4" />
       </video>
     </div>
   );
