@@ -10,7 +10,7 @@ const App = () => {
     setMuted(false);
   };
 
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
