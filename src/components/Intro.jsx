@@ -9,7 +9,7 @@ const Intro = ({ onFinish }) => {
   return (
     <div style={{ height: '100vh', backgroundColor: 'black' }}>
       <video autoPlay muted style={{ width: 'auto', height: '100%', objectFit: 'cover' }}>
-        <source src={`https://drive.google.com/file/d/11MI-TnEvqKKbxufjH7gCAYIu7_YSjxCn/view?usp=drive_link`} type="video/mp4" />
+        <source src={`https://drive.google.com/uc?export=download&id=11MI-TnEvqKKbxufjH7gCAYIu7_YSjxCn`} type="video/mp4" />
       </video>
     </div>
   );
