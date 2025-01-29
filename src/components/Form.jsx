@@ -14,7 +14,7 @@ const Form = ({ uuid }) => {
     e.preventDefault();
     console.log(formData);
     try {
-      const response = await axios.post('http://localhost:8080/submit', {
+      const response = await axios.post('https://wedding-server-z200.onrender.com/submit', {
         ...formData,
         uuid,
       });
