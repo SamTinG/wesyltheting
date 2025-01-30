@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
+function Audio({ muted }) {
+  const audioRef = useRef(null);
 
-function Audio({muted}) {
-    const audioRef = useRef(null);
-
-    useEffect(() => {
-        if (audioRef.current) {
-          // Attempt to play audio only after the component mounts and is muted initially
-          if (!muted) {
-            audioRef.current.play();
-          }
-        }
-      }, [muted]); // Trigger this when muted state changes
+  useEffect(() => {
+    if (audioRef.current) {
+      // Attempt to play audio only after the component mounts and is muted initially
+      if (!muted) {
+        audioRef.current.play();
+      }
+    }
+  }, [muted]); // Trigger this when muted state changes
 
   return (
     <div>
