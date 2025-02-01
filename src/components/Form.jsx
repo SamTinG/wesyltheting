@@ -1,82 +1,143 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {
+    InputLabel,
+    Select,
+    MenuItem,
+    Button,
+    TextField,
+    FormControl,
+} from "@mui/material";
+import "./form.css";
 
 const Form = ({ uuid }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    companion: "0",
-  });
-  const [error, setError] = useState("");
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        companion: "0",
+    });
+    const [error, setError] = useState("");
+    const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    console.log(formData);
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const handleChange = (e) => {
+        console.log(formData);
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData);
-    try {
-      const response = await axios.post(
-        "https://wedding-server-z200.onrender.com/submit",
-        {
-          ...formData,
-          uuid,
-        },
-      );
-      alert("Submission successful!");
-    } catch (err) {
-      setError("Invalid UUID or submission failed");
-    }
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formData);
+        try {
+            const response = await axios.post(
+                "https://wedding-server-z200.onrender.com/submit",
+                {
+                    ...formData,
+                    uuid,
+                }
+            );
+            setSubmitted(true);
+        } catch (err) {
+            setError(
+                "Ooops! Submission failed! Please contact the wedding hosts!"
+            );
+        }
+    };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Phone:</label>
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Are you bringing someone?</label>
-        <select
-          name="companion"
-          value={formData.companion}
-          onChange={handleChange}
-          required
-        >
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-      </div>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <button type="submit">Submit</button>
-    </form>
-  );
+    return (
+        <>
+            {submitted ? (
+                <div className="thankyou-image-container">
+                    <img
+                        className="thankyou-image"
+                        src={`${process.env.PUBLIC_URL}/thankyou.png`}
+                        alt="thankyou"
+                    />
+                </div>
+            ) : (
+                <div className="outer-container">
+                    <div className="form-container">
+                        <div className="form-image-container">
+                            <img
+                                className="image"
+                                src={`${process.env.PUBLIC_URL}/sny1.jpg`}
+                                alt="sny1"
+                            />
+                        </div>
+                        <form onSubmit={handleSubmit}>
+                            <div className="input-field">
+                                <TextField
+                                    id="outlined-basic"
+                                    name="name"
+                                    label="Name"
+                                    variant="outlined"
+                                    onChange={handleChange}
+                                    required
+                                    value={formData.name}
+                                />
+                            </div>
+                            <div className="input-field">
+                                <TextField
+                                    id="outlined-basic"
+                                    name="phone"
+                                    label="Phone"
+                                    variant="outlined"
+                                    onChange={handleChange}
+                                    required
+                                    value={formData.phone}
+                                />
+                            </div>
+                            <div className="input-field">
+                                <FormControl fullWidth>
+                                    <InputLabel id="select-label">
+                                        Are you bringing someone?
+                                    </InputLabel>
+                                    <Select
+                                        labelId="select-label"
+                                        name="companion"
+                                        value={formData.companion}
+                                        onChange={handleChange}
+                                        label="Are you bringing someone?"
+                                        required
+                                    >
+                                        <MenuItem value="0">0</MenuItem>
+                                        <MenuItem value="1">1</MenuItem>
+                                        <MenuItem value="2">2</MenuItem>
+                                        <MenuItem value="3">3</MenuItem>
+                                        <MenuItem value="4">4</MenuItem>
+                                        <MenuItem value="5">5</MenuItem>
+                                        <MenuItem value="6">6</MenuItem>
+                                        <MenuItem value="7">7</MenuItem>
+                                        <MenuItem value="8">8</MenuItem>
+                                        <MenuItem value="9">9</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                            {error && <p style={{ color: "red" }}>{error}</p>}
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                color="primary"
+                            >
+                                Submit
+                            </Button>
+                        </form>
+                        <div className="form-image-container">
+                            <img
+                                className="half-image"
+                                src={`${process.env.PUBLIC_URL}/sny2.jpg`}
+                                alt="sny1"
+                            />
+                            <img
+                                className="half-image"
+                                src={`${process.env.PUBLIC_URL}/sny3.jpg`}
+                                alt="sny1"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
+    );
 };
 
 export default Form;
