@@ -4,13 +4,37 @@ function Audio({ muted }) {
     const audioRef = useRef(null);
 
     useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === "visible") {
+                if (audioRef.current && !muted) {
+                    audioRef.current.play();
+                }
+            } else {
+                if (audioRef.current) {
+                    audioRef.current.pause();
+                }
+            }
+        };
+
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+
+        return () => {
+            document.removeEventListener(
+                "visibilitychange",
+                handleVisibilityChange
+            );
+        };
+    }, [muted]);
+
+    useEffect(() => {
         if (audioRef.current) {
-            // Attempt to play audio only after the component mounts and is muted initially
-            if (!muted) {
+            if (!muted && document.visibilityState === "visible") {
                 audioRef.current.play();
+            } else {
+                audioRef.current.pause();
             }
         }
-    }, [muted]); // Trigger this when muted state changes
+    }, [muted]);
 
     return (
         <div>
