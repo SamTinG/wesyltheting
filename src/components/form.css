@@ -1,7 +1,8 @@
 .outer-container {
     padding: 4px;
     height: 100%;
-    width: 100vw;
+    width: 50%;
+    justify-self: center;
 }
 
 form {
@@ -49,6 +50,10 @@ form {
 }
 
 @media (max-width: 768px) {
+    .outer-container {
+        width: 100vw;
+    }
+
     .form-container {
         flex-direction: column;
     }

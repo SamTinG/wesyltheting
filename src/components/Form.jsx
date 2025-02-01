@@ -18,6 +18,7 @@ const Form = ({ uuid }) => {
     });
     const [error, setError] = useState("");
     const [submitted, setSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         console.log(formData);
@@ -27,6 +28,7 @@ const Form = ({ uuid }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData);
+        setIsLoading(true);
         try {
             const response = await axios.post(
                 "https://wedding-server-z200.onrender.com/submit",
@@ -37,8 +39,9 @@ const Form = ({ uuid }) => {
             );
             setSubmitted(true);
         } catch (err) {
+            setIsLoading(false);
             setError(
-                "Ooops! Submission failed! Please contact the wedding hosts!"
+                "Oops! Submission failed! Please try again later or contact the wedding hosts!"
             );
         }
     };
@@ -117,6 +120,8 @@ const Form = ({ uuid }) => {
                                 type="submit"
                                 variant="contained"
                                 color="primary"
+                                loading={isLoading}
+                                loadingPosition="end"
                             >
                                 Submit
                             </Button>
