@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wedding.github.io/static/css/main.3646fd87.css",
-    "main.js": "/wedding.github.io/static/js/main.3a40570e.js",
-    "index.html": "/wedding.github.io/index.html",
-    "main.3646fd87.css.map": "/wedding.github.io/static/css/main.3646fd87.css.map",
-    "main.3a40570e.js.map": "/wedding.github.io/static/js/main.3a40570e.js.map"
+    "main.css": "/wesyltheting/static/css/main.9dd20cc0.css",
+    "main.js": "/wesyltheting/static/js/main.aa906886.js",
+    "index.html": "/wesyltheting/index.html",
+    "main.9dd20cc0.css.map": "/wesyltheting/static/css/main.9dd20cc0.css.map",
+    "main.aa906886.js.map": "/wesyltheting/static/js/main.aa906886.js.map"
   },
   "entrypoints": [
-    "static/css/main.3646fd87.css",
-    "static/js/main.3a40570e.js"
+    "static/css/main.9dd20cc0.css",
+    "static/js/main.aa906886.js"
   ]
 }
