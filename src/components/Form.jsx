@@ -89,7 +89,7 @@ const Form = ({ uuid }) => {
               <div className="input-field">
                 <FormControl fullWidth>
                   <InputLabel id="select-label">
-                    How many pax? (Select 0 if unable to attend)
+                    How many pax? (0 if unable to attend)
                   </InputLabel>
                   <Select
                     labelId="select-label"
