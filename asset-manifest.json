@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wesyltheting/static/css/main.9dd20cc0.css",
-    "main.js": "/wesyltheting/static/js/main.aa906886.js",
+    "main.js": "/wesyltheting/static/js/main.76fb2d4a.js",
     "index.html": "/wesyltheting/index.html",
     "main.9dd20cc0.css.map": "/wesyltheting/static/css/main.9dd20cc0.css.map",
-    "main.aa906886.js.map": "/wesyltheting/static/js/main.aa906886.js.map"
+    "main.76fb2d4a.js.map": "/wesyltheting/static/js/main.76fb2d4a.js.map"
   },
   "entrypoints": [
     "static/css/main.9dd20cc0.css",
-    "static/js/main.aa906886.js"
+    "static/js/main.76fb2d4a.js"
   ]
 }
