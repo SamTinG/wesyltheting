@@ -96,7 +96,7 @@ const Form = ({ uuid }) => {
                     name="companion"
                     value={formData.companion}
                     onChange={handleChange}
-                    label="Are you bringing someone?"
+                    label="How many pax? (Select 0 if unable to attend)"
                     required={true}
                     variant="standard"
                   >
