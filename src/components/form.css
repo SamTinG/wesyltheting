@@ -103,6 +103,7 @@ form {
 .thankyou-image-container {
     background-color: #faf8f5;
     height: 100vh;
+    align-content: center;
 }
 
 .thankyou-image {

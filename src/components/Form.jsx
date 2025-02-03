@@ -38,7 +38,7 @@ const Form = ({ uuid }) => {
     } catch (err) {
       setIsLoading(false);
       setError(
-        "Oops! Submission failed! Please try again later or contact the wedding hosts!",
+        "Oops! Submission failed! Please resubmit again. Contact the wedding hosts if resubmission also failed",
       );
     }
   };
@@ -49,7 +49,7 @@ const Form = ({ uuid }) => {
         <div className="thankyou-image-container">
           <img
             className="thankyou-image"
-            src={`${process.env.PUBLIC_URL}/thankyou.png`}
+            src={`${process.env.PUBLIC_URL}/thank_you.png`}
             alt="thankyou"
           />
         </div>
