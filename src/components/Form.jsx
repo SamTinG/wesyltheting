@@ -38,7 +38,7 @@ const Form = ({ uuid }) => {
     } catch (err) {
       setIsLoading(false);
       setError(
-        "Oops! Submission failed! Please resubmit again. Contact the wedding hosts if resubmission also failed",
+        "Oops! Submission failed! The server takes a while to warm up after inactivity. Please resubmit again. Sorry Bridegroom no money pay for high end server",
       );
     }
   };
